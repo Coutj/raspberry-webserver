@@ -1,0 +1,81 @@
+
+
+body{
+    background-image: url(raspberryWallpapersjpg);
+    background-repeat: no-repeat;
+    background-size:100%;
+    bottom: 0;
+    color: black;
+    left: 0;
+    overflow: auto;
+    top: 0;
+    background-size: cover;
+    color :white
+}
+
+h1 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    text-align: center;
+    font-size: 36px;
+}
+
+#buttonDiv {
+
+   text-align: center;
+}
+
+.slidecontainer {
+    text-align:center;
+}
+
+@media screen 
+    and (max-width: 980px)
+    and (max-height: 1525px){
+     
+    body{
+        bottom: 0;
+        left: 0;
+        top: 0;
+        background-color: lightblue;
+        background-image: url(raspberryCell.jpg);
+        background-repeat: no-repeat;
+        background-size:100%;     
+        overflow: auto;
+        background-size: 980px 1525px;
+    }
+    
+    h1 {
+        font-size: 68px;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        text-align: center;
+    }
+    
+    button{
+        font-size: 88px;
+        margin-left: 20px;
+    }
+    
+    .slider{
+        text-align: center;
+        -webkit-appearance: none;  /* Override default CSS styles */
+        appearance: none;
+        width: 60%; /* Full-width */
+        height: 60px; /* Specified height */
+        background: #d3d3d3; /* Grey background */
+        outline: none; /* Remove outline */
+        opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+        -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+        transition: opacity .2s;
+    }
+    
+    /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        width: 40px; /* Set a specific slider handle width */
+        height: 90px; /* Slider handle height */
+        background: #4CAF50; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+    }
+  
+}

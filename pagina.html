@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Página de teste do Express.js</title>
+    <link rel="stylesheet" type="text/css" href="/assets/estilo.css" />
+    <script>
+    window.onload = function() {
+        var ws = new WebSocket("ws://192.168.1.5:31337");
+        
+        ws.onopen = function(event) {
+            document.getElementById("botao1").addEventListener("click", function(ev) {
+            ws.send("Botão clicado!");
+            }, false);
+        }
+
+        ws.onmessage = function(event) {
+            document.getElementById("texto").innerHTML = (event.data + "<br>");
+        }
+    }
+    </script>
+</head>
+<body>
+    
+    <h1>Raspberry online</h1>
+    <div id="buttonDiv"> 
+        <button id="botao1">function 1</button>
+        <button id="botao2">function 2</button>
+    </div>
+    <br>
+    <div id="buttonDiv"> 
+        <button id="botao3">function 3</button>
+        <button id="botao4">function 4</button> 
+    </div>
+    
+    <br>
+    <br>
+    
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    </div>
+
+    
+    <p id="texto"></p>
+</body>
+</html>
