@@ -21,7 +21,8 @@ function envia_valor(socket) {
 }
 
 
-app.use("/assets", express.static("assets"))
+app.use("/assets", express.static("assets"));
+app.use("/js_files", express.static("js_files"));
 
 app.get("/", function(req, res) {
     res.sendFile(__dirname + "/pagina.html");

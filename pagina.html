@@ -5,21 +5,7 @@
     <meta charset="UTF-8">
     <title>Página de teste do Express.js</title>
     <link rel="stylesheet" type="text/css" href="/assets/estilo.css" />
-    <script>
-    window.onload = function() {
-        var ws = new WebSocket("ws://192.168.1.5:31337");
-        
-        ws.onopen = function(event) {
-            document.getElementById("botao1").addEventListener("click", function(ev) {
-            ws.send("Botão clicado!");
-            }, false);
-        }
-
-        ws.onmessage = function(event) {
-            document.getElementById("texto").innerHTML = (event.data + "<br>");
-        }
-    }
-    </script>
+    <script type="text/javascript" src="/js_files/ws_script.js"> </script>
 </head>
 <body>
     
