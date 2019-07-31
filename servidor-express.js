@@ -5,7 +5,7 @@ var wsserver = require("ws").Server;
 var wss = new wsserver({ port : 31337 });
 
 wss.on("connection", function(ws) {
-    var timer = setInterval(envia_valor, 500, ws);  
+    var timer = setInterval(sendValue, 500, ws);  
     
     ws.on("message", function(message) {
         console.log(message);
@@ -13,10 +13,11 @@ wss.on("connection", function(ws) {
     
     ws.on("close", function(client) {
         clearInterval(timer);
+        console.log("disconected")
     });
 });
 
-function envia_valor(socket) {
+function sendValue(socket) {
     socket.send("Este é seu número da sorte: " + Math.random()*1000);
 }
 

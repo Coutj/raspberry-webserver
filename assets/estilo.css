@@ -24,6 +24,8 @@ h1 {
    text-align: center;
 }
 
+
+
 .slidecontainer {
     text-align:center;
 }
@@ -59,7 +61,7 @@ h1 {
         text-align: center;
         -webkit-appearance: none;  /* Override default CSS styles */
         appearance: none;
-        width: 60%; /* Full-width */
+        width: 60%;
         height: 60px; /* Specified height */
         background: #d3d3d3; /* Grey background */
         outline: none; /* Remove outline */
