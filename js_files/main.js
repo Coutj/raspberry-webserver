@@ -1,5 +1,6 @@
 
-function getRange (value){
-//var rangeValue = document.getElementById("myRange").value;
-document.getElementById("rangeValueText").innerHTML = (value);
+
+function getRange (){
+	var rangeValue = document.getElementById("myRange").value;
+	document.getElementById("rangeValueText").innerHTML = (rangeValue);
 }
