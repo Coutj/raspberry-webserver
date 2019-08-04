@@ -3,16 +3,15 @@ var app = express();
 
 var wsserver = require("ws").Server;
 var wss = new wsserver({ port : 31337 });
-var date = new Date();
-var currentHour = date.getHours();
-var currentMinute = date.getMinutes();
-var currentSecond = date.getSeconds();
+
+
 
 wss.on("connection", function(ws) {
     var timer = setInterval(sendValue, 500, ws);  
     
     ws.on("message", function(message) {
-        console.log(message);
+        var obj = JSON.parse(message);
+        console.log("Valor PWM " + obj.pwm);
     }); 
     
     ws.on("close", function(client) {
@@ -22,8 +21,12 @@ wss.on("connection", function(ws) {
 });
 
 function sendValue(socket) {
-    socket.send("Este é seu número da sorte: " 
-    + currentHour + ":" + currentMinute + ":" + currentSecond);
+    
+    var date = new Date();
+    var currentHour = date.getHours();
+    var currentMinute = date.getMinutes();
+    var currentSecond = date.getSeconds();
+    socket.send(currentHour + ":" + currentMinute + ":" + currentSecond);
 }
 
 
