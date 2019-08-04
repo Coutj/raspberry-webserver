@@ -3,6 +3,10 @@ var app = express();
 
 var wsserver = require("ws").Server;
 var wss = new wsserver({ port : 31337 });
+var date = new Date();
+var currentHour = date.getHours();
+var currentMinute = date.getMinutes();
+var currentSecond = date.getSeconds();
 
 wss.on("connection", function(ws) {
     var timer = setInterval(sendValue, 500, ws);  
@@ -18,7 +22,8 @@ wss.on("connection", function(ws) {
 });
 
 function sendValue(socket) {
-    socket.send("Este é seu número da sorte: " + Math.random()*1000);
+    socket.send("Este é seu número da sorte: " 
+    + currentHour + ":" + currentMinute + ":" + currentSecond);
 }
 
 
